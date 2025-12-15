@@ -1,17 +1,31 @@
-# it-support-toolkit
+# IT Support Toolkit
 
-A small IT support command-line toolkit that:
-- prints system info
-- runs DNS + ping checks
-- generates a support report in JSON + TXT (attachable to tickets)
+A cross-platform Python command-line tool for basic IT support diagnostics.
 
-## Install
+Designed to simulate real-world Tier 1 / Tier 2 support workflows:
+- Collect system information
+- Perform DNS resolution and network connectivity checks
+- Generate ticket-ready support reports (JSON + TXT)
+
+---
+
+## Features
+
+- System diagnostics (OS, CPU, memory, disk, Python version)
+- Network troubleshooting (DNS lookup, ping test)
+- Report generation suitable for helpdesk ticket attachments
+- Graceful fallback when optional dependencies are unavailable
+- Cross-platform (Windows, macOS, Linux)
+
+---
+
+## Installation
+
+```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# mac/linux: source .venv/bin/activate
-pip install -r requirements.txt
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
 
-## Examples
-python toolkit.py sysinfo
-python toolkit.py netcheck --dns google.com --ping 8.8.8.8
-python toolkit.py report --out sample_reports/my_pc_report
+pip install -r requirements.txt
